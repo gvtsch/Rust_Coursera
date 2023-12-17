@@ -1,1 +1,0 @@
-Die Funktion println! ist ein Makro in Rust, das eine Zeichenkette auf der Konsole ausgibt. In diesem Fall ist die Zeichenkette "Hello, world!". 
