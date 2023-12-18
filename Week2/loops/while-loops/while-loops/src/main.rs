@@ -1,0 +1,7 @@
+fn main() {
+    let mut i = 0;
+    while i < 5 {
+        println!("i is {}", i);
+        i += 1;
+    }
+}
