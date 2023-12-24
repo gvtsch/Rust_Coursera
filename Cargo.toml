@@ -16,6 +16,9 @@ members = [
     "Week2/ms_lab/hashmaps_exercise",
     "Week2/ms_lab/if_else",
     "Week2/ms_lab/loops_exercise",
+    "Week2/ms_lab/enums",
+    "Week2/ms_lab/fns",
+    "Week2/ms_lab/lifetimes",
     "Week2/mutable",
     "Week2/shadowing",
     "Week2/split_string",
@@ -24,4 +27,6 @@ members = [
     "Week2/own_vec",
     "Week2/panic",
     "Week2/error_handling",
+    "Week2/lab_fns",
+    "Week2/file-reader-appl",
 ]
