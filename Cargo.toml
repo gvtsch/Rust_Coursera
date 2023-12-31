@@ -29,4 +29,6 @@ members = [
     "Week2/error_handling",
     "Week2/lab_fns",
     "Week2/file-reader-appl",
+    "Week3/struct_example",
+    "Week3/impl_fns",
 ]
