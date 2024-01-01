@@ -31,4 +31,7 @@ members = [
     "Week2/file-reader-appl",
     "Week3/struct_example",
     "Week3/impl_fns",
+    "Week3/constructors",
+    "Week3/stringAndStr",
+    "Week3/string_manipulation",
 ]
