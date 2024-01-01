@@ -34,4 +34,6 @@ members = [
     "Week3/constructors",
     "Week3/stringAndStr",
     "Week3/string_manipulation",
+    "Week3/vectors",
+    "Week3/retrieve_from_vector",
 ]
