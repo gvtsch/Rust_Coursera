@@ -9,6 +9,11 @@ fn get_item(index: usize) {
     println!("The value at index {} is: {}", index, value);
 }
 
+fn get_sum(vec: Vec<i32>) -> i32 {
+    let sum: i32 = vec.iter().sum();
+    sum
+}
+
 
 fn main() {
     let vec = vec![1, 2, 3, 4, 5];
@@ -24,8 +29,12 @@ fn main() {
     /* Retrieve the first value using pattern matching */
     match vec.first() {
         Some(first_value) => println!("The first value is: {}", first_value),
-        None => println!("There is no first value. The vctor is empty."),
+        None => println!("There is no first value. The vector is empty."),
     }
     
     get_item(3);
+
+    let sum = get_sum(vec);
+    println!("The sum of the elements in vec is: {}", sum);
+
 }

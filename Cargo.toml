@@ -36,4 +36,5 @@ members = [
     "Week3/string_manipulation",
     "Week3/vectors",
     "Week3/retrieve_from_vector",
+    "Week3/string_add",
 ]
