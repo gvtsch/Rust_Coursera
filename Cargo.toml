@@ -37,4 +37,6 @@ members = [
     "Week3/vectors",
     "Week3/retrieve_from_vector",
     "Week3/string_add",
+    "Week3/enum",
+    "Week3/enum_as_type",
 ]
