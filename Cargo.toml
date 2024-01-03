@@ -41,4 +41,5 @@ members = [
     "Week3/enum_as_type",
     "Week3/enum_option",
     "Week3/applied_enums",
+    "Week3/vectors_with_enums",
 ]
