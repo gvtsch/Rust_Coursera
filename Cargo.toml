@@ -42,4 +42,7 @@ members = [
     "Week3/enum_option",
     "Week3/applied_enums",
     "Week3/vectors_with_enums",
+    "Week3/exhaustive_matches",
+    "Week3/ms_lab_option",
+    "Week3/ms_lab_result",
 ]
