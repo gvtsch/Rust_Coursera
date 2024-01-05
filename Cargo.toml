@@ -45,4 +45,5 @@ members = [
     "Week3/exhaustive_matches",
     "Week3/ms_lab_option",
     "Week3/ms_lab_result",
+    "Week3/rust-struct-types-enum",
 ]
