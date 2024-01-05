@@ -1,13 +1,16 @@
 use std::env;
 use std::io;
 
+#[derive(Debug)]
 enum FileSize {
     Bytes(u64),
     Kilobytes(u64),
     Megabytes(u64),
     Gigabytes(u64),
+    Terabytes(u64),
 }
 
+/*
 fn format_size(size: u64) -> String {
     let filesize = match size {
         0..=999 => FileSize::Bytes(size),
@@ -21,6 +24,33 @@ fn format_size(size: u64) -> String {
         FileSize::Kilobytes(kb) => format!("{} KB", kb as f64 / 1000.0),
         FileSize::Megabytes(mb) => format!("{} MB", mb as f64 / 1000.0),
         FileSize::Gigabytes(gb) => format!("{} GB", gb as f64 / 1000.0),
+        FileSize::Terabytes(gb) => format!("{} GB", gb as f64 / 1000.0),
+    }
+}
+*/
+
+impl FileSize {
+    // Implement a method called format_size() that takes a value and a unit as arguments and returns a String.
+    // The method should return a String that should contain several values and units.
+    // For example, if the value is 100 and the unit is kilobytes, the method should return "0.1 mb" "0.0001 gb" asf.
+
+    fn format_size(size: u64, unit: &str) -> String {
+        let filesize = match unit {
+            "bytes" => FileSize::Bytes(size),
+            "kb" => FileSize::Kilobytes(size),
+            "mb" => FileSize::Megabytes(size),
+            "gb" => FileSize::Gigabytes(size),
+            "tb" => FileSize::Terabytes(size),
+            _ => panic!("Invalid unit"),
+        };
+
+        match filesize {
+            FileSize::Bytes(bytes) => format!("{} kb\n {} MB\n{} GB\n{} TB", bytes as f64 * 1_000.0, bytes as f64 * 1_000_000.0, bytes as f64 * 1_000_000_000.0, bytes as f64 / 1_000_000_000_000.0),
+            FileSize::Kilobytes(kb) => format!("{} bytes\n {} MB\n{} GB\n{} TB", kb as f64 * 1_000.0, kb as f64 / 1000.0, kb as f64 / 1_000_000.0, kb as f64 / 1_000_000_000.0),
+            FileSize::Megabytes(mb) => format!("{} bytes\n {} kb\n{} GB\n{} TB", mb as f64 * 1_000_000.0, mb as f64 * 1_000.0, mb as f64 / 1_000.0, mb as f64 / 1_000_000.0),
+            FileSize::Gigabytes(gb) => format!("{} bytes\n {} kb\n{} MB\n{} TB", gb as f64 * 1_000_000_000.0, gb as f64 * 1_000_000.0, gb as f64 / 1_000.0, gb as f64 / 1_000.0),
+            FileSize::Terabytes(tb) => format!("{} bytes\n {} kb\n{} MB\n{} GB", tb as f64 * 1_000_000_000_000.0, tb as f64 * 1_000_000_000.0, tb as f64 * 1_000_000.0, tb as f64 * 1_000.0),
+        }
     }
 }
 
@@ -42,8 +72,6 @@ fn format_size(size: u64) -> String {
         */
 
         let parts: Vec<&str> = input.trim().split_whitespace().collect();
-        println!("Value: {:?}", parts[0]);
-        println!("Unit: {:?}", parts[1]);
 
         if parts.len() != 2 {
             println!("Invalid input format");
@@ -66,39 +94,9 @@ fn format_size(size: u64) -> String {
             }
         };
 
-    match unit {
-        "bytes" => {
-            println!("Size in Kilobytes: {}", format_size(size / 1_024));
-            println!("Size in Megabytes: {}", format_size(size / 1_024 / 1_024));
-            println!("Size in Gigabytes: {}", format_size(size / 1_024 / 1_024 / 1_024));
-            println!("Size in Terabytes: {}", format_size(size / 1_024 / 1_024 / 1_024 / 1_024));
-        }
-        "kb" => {
-            println!("Size in Bytes: {}", format_size(size * 1_024));
-            println!("Size in Megabytes: {}", format_size(size / 1_024));
-            println!("Size in Gigabytes: {}", format_size(size / 1_024 / 1_024));
-            println!("Size in Terabytes: {}", format_size(size / 1_024 / 1_024 / 1_024));
-        }
-        "mb" => {
-            println!("Size in Bytes: {}", format_size(size * 1_024 * 1_024));
-            println!("Size in Kilobytes: {}", format_size(size * 1_024));
-            println!("Size in Gigabytes: {}", format_size(size / 1_024));
-            println!("Size in Terabytes: {}", format_size(size / 1_024 / 1_024));
-        }
-        "gb" => {
-            println!("Size in Bytes: {}", format_size(size * 1_024 * 1_024 * 1_024 * 1_024 * 1_024));
-            println!("Size in Kilobytes: {}", format_size(size * 1_024 * 1_024));
-            println!("Size in Megabytes: {}", format_size(size * 1_024 * 1_024));
-            println!("Size in Terabytes: {}", format_size(size / 1_024));
-        }
-        "tb" => {
-            println!("Size in Bytes: {}", format_size(size * 1_024 * 1_024 * 1_024 * 1_024 * 1_024 * 1_024));
-            println!("Size in Kilobytes: {}", format_size(size * 1_024 * 1_024 * 1_024 * 1_024));
-            println!("Size in Megabytes: {}", format_size(size * 1_024 * 1_024 * 1_024));
-            println!("Size in Gigabytes: {}", format_size(size * 1_024 * 1_024));
-        }
-        _ => {
-            println!("Invalid unit input");
-        }
-    }
+        // println!("Size: {:?} \nUnit: {:?}", size, unit);
+
+        let formatted_size = FileSize::format_size(size, unit);
+        println!("Formatted Size:\n{}", formatted_size);
+
 }
