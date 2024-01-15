@@ -7,7 +7,6 @@ enum FileSize {
     Gigabytes(u64),
 }
 
-
 fn format_size(size: u64) -> String {
     let filesize = match size {
         0..=1_023 => FileSize::Bytes(size),
@@ -27,6 +26,8 @@ fn format_size(size: u64) -> String {
 This implementation is normal.
 Make it better:
 */
+
+/// Test fuer die Doc Funktion
 
 enum FileSize {
     Bytes(u64),
