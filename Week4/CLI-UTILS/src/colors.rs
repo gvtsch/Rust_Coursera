@@ -11,6 +11,8 @@
 /// use cli_utils::colors::*;
 /// println!("{}", red("Red"));
 /// ```
+
+
 pub fn red(s: &str) -> String {
     format!("\x1b[31m{}\x1b[0m", s)
 }
