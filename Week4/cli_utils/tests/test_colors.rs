@@ -1,4 +1,4 @@
-use CLI_UTILS::colors::{ColorString, Color};
+use cli_utils::colors::{ColorString, Color};
 
 #[test]
 fn test_red_coloring(){

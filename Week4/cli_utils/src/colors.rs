@@ -59,7 +59,7 @@ impl ColorString {
     }
 
     pub fn nothing(&mut self) {
-        /// This method is doing nothing.
+        // This method is doing nothing.
         println!("Nothing")
     }
 

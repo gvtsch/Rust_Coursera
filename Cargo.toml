@@ -46,6 +46,10 @@ members = [
     "Week3/ms_lab_option",
     "Week3/ms_lab_result",
     "Week3/rust-struct-types-enum",
-    "Week4/CLI-UTILS",
+    "Week4/cli_utils",
     "Week4/debugging",
+    "Week4/ms-labs-tests",
+    "Week4/ms-labs-tests/basic_math",
+    "Week4/ms-labs-tests/doctests_exercise",
+    "Week4/ms-labs-tests/rusty_pizza",
 ]

@@ -42,7 +42,7 @@ mod tests {
 
     #[test]
     fn test_read_input() {
-        let input = "Hello, world!\n";
+        let input: &str = "Hello, world!\n";
         let expected_output = "Hello, world!";
         let mut reader = Cursor::new(input);
         let output = _read_stdin(&mut reader);
